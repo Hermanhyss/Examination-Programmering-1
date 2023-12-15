@@ -6,11 +6,24 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
-
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+      EnemyController enemyComp = GetComponent<EnemyController>();
+        if (enemyComp != null)
+        {
+            enemyComp.TakeDamage();
+            GameObject.Destroy(gameObject);
+        }
+    }
+
+
+
 }
+
