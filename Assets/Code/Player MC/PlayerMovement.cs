@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -6,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public int maxHealth = 3;
     public int currenHealth; 
     public HealthBar healthBar;
+
+  
+    
     //movement 
     public float moveSpeed = 5f; // Adjust the speed as needed
     public float tiltAmount = 20f; // Adjust the tilt amount as needed
@@ -17,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     public float minY = -5f;
     public float maxY = 5f;
 
+
+
+
     void Start()
     {
         
@@ -26,16 +33,17 @@ public class PlayerMovement : MonoBehaviour
         
             currenHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        
     
     }
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currenHealth -= damage;
 
         healthBar.SetHealth(currenHealth);
-    }
 
+
+
+    }
     
 
     void Update()
@@ -62,7 +70,12 @@ public class PlayerMovement : MonoBehaviour
 
         // Update the player's position
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
-       }
+
+        
+           
+
+        }
+
     }
 
 }

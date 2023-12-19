@@ -7,30 +7,44 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public int health = 1;
+    private int damageAmount = 1;
 
-    public void TakeDamage()
+    public void TakeDamage(int damageAmount)
     {
-        GameObject.Destroy(gameObject);
-    }
+        health -= damageAmount;
+        // if enemy has less than 1 it get destory 
+        if (health <= 0)
+        {
+            GameObject.Destroy(gameObject);
 
+        }
+
+    }
 
     void Update()
     {
         MoveEnemy();
 
-        // Check if the enemy is beyond the left boundary
+        // Check if the enemy is beyond the left boundary 
         if (transform.position.x < GetLeftBoundary())
         {
-            // Destroy the enemy upon reaching the left boundary
+            // Destroy the enemy upon reaching the left boundary and deal one damage on player 
             Destroy(gameObject);
+
+            PlayerMovement playerhealth = FindObjectOfType<PlayerMovement>();
+            if (playerhealth != null)
+            {
+                playerhealth.TakeDamage(damageAmount);
+            }
         }
     }
 
-    void MoveEnemy()
+    private void MoveEnemy()
     {
         // Move the enemy from right to left
         var RBPos = GetComponent<Rigidbody2D>().position;
-         RBPos += (Vector2.left * moveSpeed * Time.deltaTime);
+        RBPos += (Vector2.left * moveSpeed * Time.deltaTime);
         GetComponent<Rigidbody2D>().position = RBPos;
     }
 
@@ -39,6 +53,18 @@ public class EnemyController : MonoBehaviour
         // Calculate left boundary based on the screen size
         float leftBoundary = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
         return leftBoundary;
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            TakeDamage(bullet.damage);
+            Destroy(collision.gameObject);
+        }
+
+
     }
 }
 
