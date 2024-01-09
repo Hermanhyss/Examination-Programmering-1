@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed = 5f;
     public int health = 1;
     private int damageAmount = 1;
+    public GameManager gamemanager;
+    public KillCounter killCounter;
 
     public void TakeDamage(int damageAmount)
     {
@@ -21,6 +23,16 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+  
+            
+
+    
+    private void Start()
+    {
+        gamemanager = GameObject.Find("Gamemanager").GetComponent<GameManager>();
+    }
+
+   
 
     void Update()
     {
@@ -48,6 +60,7 @@ public class EnemyController : MonoBehaviour
         GetComponent<Rigidbody2D>().position = RBPos;
     }
 
+    
     float GetLeftBoundary()
     {
         // Calculate left boundary based on the screen size

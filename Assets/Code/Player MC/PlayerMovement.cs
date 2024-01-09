@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public int maxHealth = 3;
     public int currenHealth; 
     public HealthBar healthBar;
+    public GameManager gameManager;
 
-  
-    
+    private bool isDead;
     //movement 
     public float moveSpeed = 5f; // Adjust the speed as needed
     public float tiltAmount = 20f; // Adjust the tilt amount as needed
@@ -71,7 +71,12 @@ public class PlayerMovement : MonoBehaviour
         // Update the player's position
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
 
-        
+        if (currenHealth <= 0 && !isDead)
+            {
+                isDead = true;
+                gameManager.gameOver();
+                    Debug.Log("dead");
+            }
            
 
         }
