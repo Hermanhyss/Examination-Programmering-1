@@ -1,23 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-public class KillCounter : MonoBehaviour
+public class KillCount : MonoBehaviour
 {
-    public Text counterText;
-    int kills;
-     
-    private void ShowKills()
+    public TextMeshProUGUI killCountText;
+    private int killCount = 0;
+
+    void Start()
     {
-      counterText.text = kills.ToString();
+        UpdateKillCountText();
     }
-    public void AddKill()
+
+    // Call this method whenever a kill happens
+    public void IncreaseKillCount()
     {
-        kills++;
+        killCount++;
+        UpdateKillCountText();
     }
-    private void Update()
+
+    void UpdateKillCountText()
     {
-        ShowKills();
+        if (killCountText != null)
+        {
+            killCountText.text = "Kills: " + killCount;
+        }
     }
 }
+

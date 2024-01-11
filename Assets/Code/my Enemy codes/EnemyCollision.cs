@@ -21,10 +21,7 @@ public class EnemyCollision : MonoBehaviour
                 playerhealth.TakeDamage(damageAmount);
                 Debug.Log("take dammage");
             }
-            if (collision.collider.CompareTag("Player"))
-            {
-                Destroy(collision.gameObject);
-            }
+          
         }
 
     }
