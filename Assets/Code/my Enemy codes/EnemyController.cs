@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     public int health = 1;
     private int damageAmount = 1;
     public GameManager gamemanager;
+ 
    
    
 
@@ -24,6 +25,8 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+
+  
  
 
 

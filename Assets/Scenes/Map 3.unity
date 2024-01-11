@@ -621,51 +621,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388544032}
   m_CullTransparentMesh: 1
---- !u!1 &393978596
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 393978598}
-  - component: {fileID: 393978597}
-  m_Layer: 0
-  m_Name: Killcount
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &393978597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393978596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33390101f4c63c34e86f1d76a4820022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  killCountText: {fileID: 214247973}
---- !u!4 &393978598
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393978596}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 910.81354, y: 517.6818, z: 8.440605}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &401763149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -734,10 +689,17 @@ PrefabInstance:
       propertyPath: gamemanager
       value: 
       objectReference: {fileID: 1836708038}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4673430090295265332, guid: ddeff4437cc172c4495e3f998e513f6b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2686605912970224926, guid: ddeff4437cc172c4495e3f998e513f6b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 633852747}
+    - targetCorrespondingSourceObject: {fileID: 2686605912970224926, guid: ddeff4437cc172c4495e3f998e513f6b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 633852748}
   m_SourcePrefab: {fileID: 100100000, guid: ddeff4437cc172c4495e3f998e513f6b, type: 3}
 --- !u!1 &410010177
 GameObject:
@@ -967,6 +929,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1801846750431067549, guid: ddeff4437cc172c4495e3f998e513f6b, type: 3}
   m_PrefabInstance: {fileID: 401763149}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &633852747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633852737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32bcbaa0ce42e76429a35034f5b23632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  health: 3
+  gamemanager: {fileID: 1836708038}
+--- !u!114 &633852748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633852737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1312417f85544a64c89c1d9ad346ae2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
 --- !u!1001 &759124408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2551,9 +2541,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1948657903}
   - component: {fileID: 1948657902}
-  - component: {fileID: 1948657901}
   - component: {fileID: 1948657905}
   - component: {fileID: 1948657904}
+  - component: {fileID: 1948657906}
+  - component: {fileID: 1948657907}
   m_Layer: 0
   m_Name: Shmup Player Enemy Sprites_39
   m_TagString: Untagged
@@ -2561,21 +2552,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1948657901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948657900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 237c60bafd877454e96c823c250e3afc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 12
-  health: 10
-  gamemanager: {fileID: 1836708038}
 --- !u!212 &1948657902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2715,6 +2691,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1948657906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948657900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32bcbaa0ce42e76429a35034f5b23632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  health: 10
+  gamemanager: {fileID: 1836708038}
+--- !u!114 &1948657907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948657900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1312417f85544a64c89c1d9ad346ae2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2725,7 +2729,6 @@ SceneRoots:
   - {fileID: 1115261283}
   - {fileID: 148862496}
   - {fileID: 1569777797}
-  - {fileID: 393978598}
   - {fileID: 1675994190}
   - {fileID: 1130883726}
   - {fileID: 759124408}

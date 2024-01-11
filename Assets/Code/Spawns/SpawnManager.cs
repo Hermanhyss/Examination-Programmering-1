@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
         }
 
         // Instantiate the enemy at the spawn point
-        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        _ = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
 
         // Increment the spawn count
         currentSpawnCount++;

@@ -11,6 +11,7 @@ public class EnemyTwo : MonoBehaviour
 
 
 
+
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
@@ -22,6 +23,7 @@ public class EnemyTwo : MonoBehaviour
         }
 
     }
+
 
 
 
