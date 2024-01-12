@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerData GlobalPlayerData;
+    public TMPro.TextMeshProUGUI KillText = null;
     // How much health 
     public int maxHealth = 3;
     public int currenHealth; 
@@ -48,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        {   // Get input values for horizontal and vertical axes
+        KillText.text = "Kills: " + GlobalPlayerData.CurrentScore;
+         // Get input values for horizontal and vertical axes
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
@@ -79,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
             }
            
 
-        }
+        
 
     }
 

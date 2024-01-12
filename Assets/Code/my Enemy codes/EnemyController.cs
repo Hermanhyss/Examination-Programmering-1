@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    
     public float moveSpeed = 5f;
     public int health = 1;
     private int damageAmount = 1;
     public GameManager gamemanager;
- 
+    
    
    
 
@@ -84,6 +85,7 @@ public class EnemyController : MonoBehaviour
 
 
     }
+ 
 }
 
 

@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32bcbaa0ce42e76429a35034f5b23632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GlobalPlayerData: {fileID: 11400000, guid: 8d629c2ce2f585941aa09411eff07a3e, type: 2}
   moveSpeed: 5
   health: 1
   gamemanager: {fileID: 0}
-  killCounter: {fileID: 0}
 --- !u!50 &6959923773187781867
 Rigidbody2D:
   serializedVersion: 4

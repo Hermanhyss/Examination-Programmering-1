@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public PlayerData playerData;
     public float speed;
     private Rigidbody2D rb;
     public int damage = 1;
@@ -16,11 +17,13 @@ public class Bullet : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-      EnemyController enemyComp = GetComponent<EnemyController>();
+      EnemyController enemyComp = collision.gameObject.GetComponent<EnemyController>();
         if (enemyComp != null)
         {
             enemyComp.TakeDamage(1);
+            playerData.CurrentScore += 1;
             GameObject.Destroy(gameObject);
+     
         }
     }
 
